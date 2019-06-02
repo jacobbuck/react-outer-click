@@ -1,6 +1,6 @@
 # react-outer-click
 
-React component which detect mouse clicks outside of itself.
+React component and hook which detect mouse clicks outside of itself.
 
 ## Usage
 
