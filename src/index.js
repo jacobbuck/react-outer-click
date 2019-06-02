@@ -31,13 +31,17 @@ export const useOuterClick = (ref, handler) => {
 };
 
 export const OuterClick = props => {
-  const { children, onOuterClick } = props;
+  const { children, onOuterClick, ...restProps } = props;
 
   const ref = useRef();
 
   useOuterClick(ref, onOuterClick);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div {...restProps} ref={ref}>
+      {children}
+    </div>
+  );
 };
 
 OuterClick.propTypes = {

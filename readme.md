@@ -38,6 +38,8 @@ const Example = props => {
 };
 ```
 
+:warning: The `OuterClick` Component will wrap your children with a `<div>` element.
+
 ## Requirements
 
 Requires a minimum of React version 16.8.0. If you're on an older version of React, then checkout [v1](https://github.com/jacobbuck/react-outer-click/tree/v1).
