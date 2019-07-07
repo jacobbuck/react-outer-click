@@ -1,26 +1,31 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef } from 'react';
+import castArray from './castArray';
 
-export const useOuterClick = (ref, handler) => {
+export const useOuterClick = (refs, handler = () => {}) => {
   if (process.env.NODE_ENV !== 'production' && typeof handler !== 'function') {
     throw new TypeError(
       `Expected "handler" to be a function, not ${typeof handler}.`
     );
   }
 
+  const refsRef = useRef(refs);
   const handerRef = useRef(handler);
 
   useEffect(() => {
+    refsRef.current = refs;
     handerRef.current = handler;
-  }, [handler]);
+  }, [refs, handler]);
 
   useEffect(() => {
     const handleClickOutside = event => {
       if (
-        handerRef.current &&
-        ref.current &&
-        ref.current !== event.target &&
-        !ref.current.contains(event.target)
+        castArray(refsRef.current).every(
+          ref =>
+            ref.current &&
+            ref.current !== event.target &&
+            !ref.current.contains(event.target)
+        )
       ) {
         handerRef.current(event);
       }
@@ -33,7 +38,7 @@ export const useOuterClick = (ref, handler) => {
       document.removeEventListener('mousedown', handleClickOutside, true);
       document.removeEventListener('touchstart', handleClickOutside, true);
     };
-  }, [ref]);
+  }, []);
 };
 
 export const OuterClick = props => {
