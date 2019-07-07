@@ -1,6 +1,6 @@
 {
   "name": "react-outer-click",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "React component and hook which detect mouse clicks outside of itself.",
   "main": "lib/index.js",
   "files": [
