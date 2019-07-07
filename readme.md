@@ -1,10 +1,21 @@
 # react-outer-click
 
-React component and hook which detect mouse clicks outside of itself.
+React component and hook which detect mouse clicks outside of an element.
 
 ## Usage
 
 ### `useOuterClick` Hook (recommended)
+
+```jsx
+useOuterClick(refs, handler)
+```
+
+#### Parameters
+
+- `refs` a single [ref](https://reactjs.org/docs/hooks-reference.html#useref) or array of refs to not be handled the user has clicked
+- `handler` callback function to be called when the user has clicked 
+
+#### Example
 
 ```jsx
 import { useOuterClick } from 'react-outer-click';
@@ -23,6 +34,17 @@ const Example = props => {
 ### `OuterClick` Component
 
 ```jsx
+<OuterClick onOuterClick={}></OuterClick>
+```
+
+#### Props
+
+- `children` elements that will not be handled when clicked
+- `onOuterClick` callback function to be called when the user has clicked
+
+#### Example
+
+```jsx
 import { OuterClick } from 'react-outer-click';
 
 const Example = props => {
@@ -38,7 +60,7 @@ const Example = props => {
 };
 ```
 
-:warning: The `OuterClick` Component will wrap your children with a `<div>` element.
+:warning: The `OuterClick` component will wrap your children with a `<div>` element, and any additional props will be passed down.
 
 ## Requirements
 
