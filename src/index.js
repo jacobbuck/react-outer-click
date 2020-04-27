@@ -18,10 +18,10 @@ export const useOuterClick = (refs, handler = () => {}) => {
   }, [refs, handler]);
 
   useEffect(() => {
-    const handleClickOutside = event => {
+    const handleClickOutside = (event) => {
       if (
         castArray(refsRef.current).every(
-          ref =>
+          (ref) =>
             ref.current &&
             ref.current !== event.target &&
             !ref.current.contains(event.target)
@@ -41,7 +41,7 @@ export const useOuterClick = (refs, handler = () => {}) => {
   }, []);
 };
 
-export const OuterClick = props => {
+export const OuterClick = (props) => {
   const { children, onOuterClick, ...restProps } = props;
 
   const ref = useRef();
