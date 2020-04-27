@@ -3,20 +3,25 @@ import React, { useRef } from 'react';
 import useOuterClick from './useOuterClick';
 
 export const OuterClick = (props) => {
-  const { children, onOuterClick, ...restProps } = props;
+  const { as: Element, children, onOuterClick, ...restProps } = props;
 
   const ref = useRef();
 
   useOuterClick(ref, onOuterClick);
 
   return (
-    <div {...restProps} ref={ref}>
+    <Element {...restProps} ref={ref}>
       {children}
-    </div>
+    </Element>
   );
 };
 
+OuterClick.defaultProps = {
+  as: 'div',
+};
+
 OuterClick.propTypes = {
+  as: PropTypes.elementType,
   children: PropTypes.element.isRequired,
   onOuterClick: PropTypes.func.isRequired,
 };
