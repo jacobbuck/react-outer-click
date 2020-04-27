@@ -60,7 +60,9 @@ const Example = props => {
 };
 ```
 
-:warning: The `OuterClick` component will wrap your children with a `<div>` element, and any additional props will be passed down.
+> :warning: The `OuterClick` component will wrap your children with a `<div>` element, and any additional props will be passed down.
+
+> :warning: Previous versions of react-outer-click allowed `OuterClick` to be imported as default export. This is no longer supported and has been removed.
 
 ## Requirements
 
