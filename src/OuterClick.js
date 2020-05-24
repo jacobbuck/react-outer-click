@@ -18,11 +18,12 @@ export const OuterClick = (props) => {
 
 OuterClick.defaultProps = {
   as: 'div',
+  children: null,
 };
 
 OuterClick.propTypes = {
   as: PropTypes.elementType,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
   onOuterClick: PropTypes.func.isRequired,
 };
 
