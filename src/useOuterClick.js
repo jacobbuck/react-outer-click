@@ -9,13 +9,8 @@ const useOuterClick = (refs, handler = () => {}) => {
     );
   }
 
-  const refsRef = useRef(refs);
-  const handerRef = useRef(handler);
-
-  useEffect(() => {
-    refsRef.current = refs;
-    handerRef.current = handler;
-  }, [refs, handler]);
+  const refsRef = useLatest(refs);
+  const handerRef = useLatest(handler);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
