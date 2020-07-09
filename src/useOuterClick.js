@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
+import useLatest from 'use-latest';
 import castArray from './castArray';
 
 const useOuterClick = (refs, handler = () => {}) => {
