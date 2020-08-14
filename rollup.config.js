@@ -6,7 +6,13 @@ export default {
     { file: 'lib/index.cjs.js', format: 'cjs' },
     { file: 'lib/index.esm.js', format: 'esm' },
   ],
-  external: [/@babel\/runtime/, 'prop-types', 'react', 'use-latest'],
+  external: [
+    /@babel\/runtime/,
+    'prop-types',
+    'react',
+    'use-composed-ref',
+    'use-latest',
+  ],
   plugins: [
     babel({
       babelHelpers: 'runtime',
