@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build"
   },
