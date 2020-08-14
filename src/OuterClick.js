@@ -30,7 +30,7 @@ OuterClick.propTypes = {
   onOuterClick: PropTypes.func.isRequired,
   ref: PropTypes.oneOfType([
     PropTypes.func,
-    PropTypes.shape({ current: PropTypes.elementType }),
+    PropTypes.shape({ current: PropTypes.any }),
   ]),
 };
 
