@@ -21,17 +21,12 @@ const OuterClick = React.forwardRef((props, outerRef) => {
 OuterClick.defaultProps = {
   as: 'div',
   children: null,
-  ref: null,
 };
 
 OuterClick.propTypes = {
   as: PropTypes.elementType,
   children: PropTypes.node,
   onOuterClick: PropTypes.func.isRequired,
-  ref: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any }),
-  ]),
 };
 
 export default OuterClick;
