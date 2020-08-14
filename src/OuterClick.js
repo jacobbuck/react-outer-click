@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useComposedRef } from 'use-composed-ref';
 import useOuterClick from './useOuterClick';
 
-export const OuterClick = React.forwardRef((props, outerRef) => {
+const OuterClick = React.forwardRef((props, outerRef) => {
   const { as: Element, children, onOuterClick, ...rest } = props;
 
   const innerRef = useRef();
