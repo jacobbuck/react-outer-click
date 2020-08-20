@@ -37,7 +37,7 @@
 
 ### Changed
 
-- Enable loose mode on '@babel/preset-env' to reduce build output.
+- Enabled loose mode on '@babel/preset-env' to reduce build output.
 - Updated devDependencies.
 
 ### Removed
