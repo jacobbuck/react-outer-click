@@ -57,7 +57,7 @@
 
 ### Removed
 
-- **BREAKING** removed `OuterClick` as default export.
+- **BREAKING** Removed `OuterClick` as default export.
 
 ## v2.2.0 - 2019-07-07
 
@@ -101,7 +101,7 @@
 
 ### Changed
 
-- Builds are now done with [Rollup](http://rollupjs.org)!
+- Builds are now done with [Rollup](http://rollupjs.org).
 - Updated devDependencies.
 
 ## v1.0.1 - 2017-08-21
