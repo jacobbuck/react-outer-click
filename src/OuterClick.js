@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
-import { useComposedRef } from 'use-composed-ref';
+import useComposedRef from 'use-composed-ref';
 import useOuterClick from './useOuterClick';
 
 const OuterClick = React.forwardRef((props, outerRef) => {
