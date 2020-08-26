@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- Fixed import of [use-composed-ref](https://www.npmjs.com/package/use-composed-ref).
+
+### Removed
+
+- Removed defaultProps and propTypes definitions for `ref`.
+
 ## v3.3.0 - 2020-08-15
 
 ### Added
