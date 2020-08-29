@@ -58,10 +58,10 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
-    "prettier": "^2.1.0",
+    "prettier": "^2.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rollup": "^2.26.5"
+    "rollup": "^2.26.7"
   },
   "peerDependencies": {
     "react": "^16.8.0"
