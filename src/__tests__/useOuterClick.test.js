@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
+import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
 import useOuterClick from '../useOuterClick';
 
@@ -18,6 +19,10 @@ const TestComponent = (props) => {
       </div>
     </div>
   );
+};
+
+TestComponent.propTypes = {
+  handler: PropTypes.func,
 };
 
 test('throws TypeError when handler is not a function', () => {

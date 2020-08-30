@@ -35,9 +35,9 @@ test('renders element defined by `as` prop', () => {
 });
 
 test('renders component defined by `as` prop', () => {
-  const TestComponent = React.forwardRef((props, ref) => (
-    <aside ref={ref} {...props} />
-  ));
+  const TestComponent = React.forwardRef(function TestComponent(props, ref) {
+    return <aside ref={ref} {...props} />;
+  });
   const { container } = render(
     <OuterClick as={TestComponent} onOuterClick={() => {}} />
   );
