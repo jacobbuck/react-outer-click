@@ -95,7 +95,7 @@
 
 ### Added
 
-- Additional props are now passed to wrapper div inside  `OuterClick` component.
+- Additional props are now passed to wrapper div inside `OuterClick` component.
 
 ## v2.0.0 - 2019-06-02
 
@@ -108,7 +108,7 @@
 
 - **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.8.0 or newer.
 - **BREAKING** `OuterClick` component renders a wrapper `div` element (instead of using [`findDOMNode()`](https://reactjs.org/docs/react-dom.html#finddomnode).)
-- **BREAKING** Updated `children`  prop-type of `OuterClick` component to be required.
+- **BREAKING** Updated `children` prop-type of `OuterClick` component to be required.
 - Bumped up version of [prop-types](https://www.npmjs.com/package/prop-types) to v15.7.2.
 - Changed `OuterClick` component to be functional and use hooks internally.
 - Updated devDependencies.
