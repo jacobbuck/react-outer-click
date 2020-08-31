@@ -23,10 +23,12 @@ OuterClick.defaultProps = {
   children: null,
 };
 
-OuterClick.propTypes = {
-  as: PropTypes.elementType,
-  children: PropTypes.node,
-  onOuterClick: PropTypes.func.isRequired,
-};
+if (process.env.NODE_ENV !== 'production') {
+  OuterClick.propTypes = {
+    as: PropTypes.elementType,
+    children: PropTypes.node,
+    onOuterClick: PropTypes.func.isRequired,
+  };
+}
 
 export default OuterClick;
