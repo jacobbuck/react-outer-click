@@ -5,6 +5,7 @@
 ### Changed
 
 - Updated devDependencies.
+- Updated `propTypes` to only be defined in non-production environments.
 
 ## v3.3.1 - 2020-08-26
 
