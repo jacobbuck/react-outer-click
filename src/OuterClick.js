@@ -10,9 +10,7 @@ const OuterClick = React.forwardRef(function OuterClick(
 ) {
   const innerRef = useRef();
   const ref = useComposedRef(innerRef, outerRef);
-
   useOuterClick(innerRef, onOuterClick);
-
   return (
     <Element {...rest} ref={ref}>
       {children}
