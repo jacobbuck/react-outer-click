@@ -4,8 +4,13 @@
 
 ### Changed
 
-- Updated devDependencies.
 - Updated `propTypes` to only be defined in non-production environments.
+- Updated devDependencies.
+- Updated React import to avoid using default import.
+
+### Removed
+
+- Removed `defaultProps` in favour of default values in object destructuring.
 
 ## v3.3.1 - 2020-08-26
 
