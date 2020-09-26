@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import React, { useRef } from 'react';
+import * as React from 'react';
+import { useRef } from 'react';
 import useComposedRef from 'use-composed-ref';
 import useOuterClick from './useOuterClick';
 
