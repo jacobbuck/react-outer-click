@@ -5,7 +5,7 @@ import useComposedRef from 'use-composed-ref';
 import useOuterClick from './useOuterClick';
 
 const OuterClick = React.forwardRef(function OuterClick(
-  { as: Element, children, onOuterClick, ...rest },
+  { as: Element = 'div', children = null, onOuterClick, ...rest },
   outerRef
 ) {
   const innerRef = useRef();
@@ -19,11 +19,6 @@ const OuterClick = React.forwardRef(function OuterClick(
     </Element>
   );
 });
-
-OuterClick.defaultProps = {
-  as: 'div',
-  children: null,
-};
 
 if (process.env.NODE_ENV !== 'production') {
   OuterClick.propTypes = {
