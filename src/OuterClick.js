@@ -6,11 +6,11 @@ import useOuterClick from './useOuterClick';
 
 const OuterClick = React.forwardRef(function OuterClick(
   { as: Element = 'div', children = null, onOuterClick, ...rest },
-  outerRef
+  userRef
 ) {
-  const innerRef = useRef();
-  const ref = useComposedRef(innerRef, outerRef);
-  useOuterClick(innerRef, onOuterClick);
+  const libRef = useRef();
+  const ref = useComposedRef(libRef, userRef);
+  useOuterClick(libRef, onOuterClick);
   return (
     <Element {...rest} ref={ref}>
       {children}
