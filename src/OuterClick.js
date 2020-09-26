@@ -4,9 +4,10 @@ import { useRef } from 'react';
 import useComposedRef from 'use-composed-ref';
 import useOuterClick from './useOuterClick';
 
-const OuterClick = React.forwardRef(function OuterClick(props, outerRef) {
-  const { as: Element, children, onOuterClick, ...rest } = props;
-
+const OuterClick = React.forwardRef(function OuterClick(
+  { as: Element, children, onOuterClick, ...rest },
+  outerRef
+) {
   const innerRef = useRef();
   const ref = useComposedRef(innerRef, outerRef);
 
