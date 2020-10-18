@@ -2,13 +2,7 @@ import { useEffect } from 'react';
 import useLatest from 'use-latest';
 import castArray from './castArray';
 
-const useOuterClick = (refs, handler = () => {}) => {
-  if (process.env.NODE_ENV !== 'production' && typeof handler !== 'function') {
-    throw new TypeError(
-      `Expected "handler" to be a function, not ${typeof handler}.`
-    );
-  }
-
+const useOuterClick = (refs, handler) => {
   const refsRef = useLatest(refs);
   const handerRef = useLatest(handler);
 
@@ -20,7 +14,8 @@ const useOuterClick = (refs, handler = () => {}) => {
             ref.current &&
             ref.current !== event.target &&
             !ref.current.contains(event.target)
-        )
+        ) &&
+        handerRef.current != null
       ) {
         handerRef.current(event);
       }
