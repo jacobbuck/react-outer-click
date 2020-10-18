@@ -3,6 +3,27 @@ import useLatest from 'use-latest';
 import castArray from './castArray';
 
 const useOuterClick = (refs, handler) => {
+  if (process.env.NODE_ENV !== 'production') {
+    if (Array.isArray(refs)) {
+      refs.forEach((ref, i) => {
+        if (typeof refs !== 'object') {
+          throw new TypeError(
+            `Expected \`refs[${i}]\` to be of type \`object\`, but received type \`${typeof ref}\``
+          );
+        }
+      });
+    } else if (typeof refs !== 'object') {
+      throw new TypeError(
+        `Expected \`refs\` to be of type \`array\` or \`object\`, but received type \`${typeof handler}\``
+      );
+    }
+    if (typeof handler !== 'function' && handler != null) {
+      throw new TypeError(
+        `Expected \`handler\` to be of type \`function\`, but received type \`${typeof handler}\``
+      );
+    }
+  }
+
   const refsRef = useLatest(refs);
   const handerRef = useLatest(handler);
 
