@@ -14,7 +14,7 @@ const useOuterClick = (refs, handler) => {
       });
     } else if (typeof refs !== 'object') {
       throw new TypeError(
-        `Expected \`refs\` to be of type \`array\` or \`object\`, but received type \`${typeof handler}\``
+        `Expected \`refs\` to be of type \`array\` or \`object\`, but received type \`${typeof refs}\``
       );
     }
     if (typeof handler !== 'function' && handler != null) {
