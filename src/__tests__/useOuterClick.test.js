@@ -25,10 +25,8 @@ TestComponent.propTypes = {
   handler: PropTypes.func,
 };
 
-test('throws TypeError when handler is not a function', () => {
-  expect(() => useOuterClick([], { hello: 'world' })).toThrow(
-    new TypeError('Expected "handler" to be a function, not object.')
-  );
+test('throws when handler is not a function', () => {
+  expect(() => useOuterClick([], { hello: 'world' })).toThrow();
 });
 
 test('uses default handler when not set', () => {
