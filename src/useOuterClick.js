@@ -6,7 +6,7 @@ const useOuterClick = (refs, handler) => {
   if (process.env.NODE_ENV !== 'production') {
     if (Array.isArray(refs)) {
       refs.forEach((ref, i) => {
-        if (typeof refs !== 'object') {
+        if (typeof ref !== 'object') {
           throw new TypeError(
             `Expected \`refs[${i}]\` to be of type \`object\`, but received type \`${typeof ref}\``
           );
