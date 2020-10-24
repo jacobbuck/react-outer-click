@@ -4,7 +4,7 @@
 
 ### Added
 
-- Added type-checking of `refs` parameter in `useOuterClick` hook.
+- Added type checking of `refs` parameter in `useOuterClick` hook.
 
 ### Changed
 
