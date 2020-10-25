@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.12.1.
+- Updated devDependencies.
+
 ## v3.4.0 - 2020-10-25
 
 ### Added
