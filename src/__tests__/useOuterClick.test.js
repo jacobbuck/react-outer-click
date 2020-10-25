@@ -73,11 +73,6 @@ test('throws TypeError if handler is not a function', () => {
   );
 });
 
-test.skip('doesn’t throw TypeError if handler is nullish', () => {
-  expect(() => useOuterClick({}, null)).not.toThrow();
-  expect(() => useOuterClick({}, undefined)).not.toThrow();
-});
-
 test('doesn’t typecheck in production', () => {
   const env = process.env;
   process.env = { NODE_ENV: 'production' };
