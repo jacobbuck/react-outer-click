@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
 import useOuterClick from '../useOuterClick';
 
-const fireClickEvent = (element) => {
-  fireEvent.mouseDown(element);
-  fireEvent.touchStart(element);
-};
+const fireClickEvent = (element) =>
+  [fireEvent.mouseDown, fireEvent.touchStart].forEach((fn) => fn(element));
 
 const TestComponent = (props) => {
   const ref = useRef(null);
