@@ -28,9 +28,7 @@ test('renders a div element with passed children and props', () => {
 });
 
 test('renders element defined by `as` prop', () => {
-  const { container } = render(
-    <OuterClick as="span" onOuterClick={() => {}} />
-  );
+  const { container } = render(<OuterClick as="span" />);
   expect(container.firstChild.tagName).toBe('SPAN');
 });
 
@@ -58,4 +56,13 @@ test('forwards callback ref to rendered elment', () => {
     <OuterClick onOuterClick={() => {}} ref={ref} />
   );
   expect(ref).toHaveBeenCalledWith(container.firstChild);
+});
+
+test('propTypes aren’t set in production', () => {
+  const env = process.env;
+  process.env = { NODE_ENV: 'production' };
+  jest.resetModules();
+  expect(require('../OuterClick').default).not.toHaveProperty('propTypes');
+  process.env = env;
+  jest.resetModules();
 });
