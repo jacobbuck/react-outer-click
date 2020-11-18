@@ -5,6 +5,7 @@
 ### Added
 
 - Added source maps to build output.
+- Updated devDependencies.
 
 ## v3.4.1 - 2020-10-26
 
