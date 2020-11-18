@@ -35,10 +35,10 @@
   },
   "homepage": "https://github.com/jacobbuck/react-outer-click#readme",
   "dependencies": {
-    "@babel/runtime": "^7.12.1",
+    "@babel/runtime": "^7.12.5",
     "prop-types": "^15.7.2",
-    "use-composed-ref": "^1.0.0",
-    "use-latest": "^1.1.0"
+    "use-composed-ref": "^1.1.0",
+    "use-latest": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

@@ -5,6 +5,12 @@
 ### Added
 
 - Added source maps to build output.
+
+### Changed
+
+- Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.12.5.
+- Bumped up version of [use-composed-ref](https://www.npmjs.com/package/use-composed-ref) to v1.1.0.
+- Bumped up version of [use-latest](https://www.npmjs.com/package/use-latest) to v1.2.0.
 - Updated devDependencies.
 
 ## v3.4.1 - 2020-10-26
