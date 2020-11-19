@@ -18,12 +18,10 @@ const OuterClick = React.forwardRef(function OuterClick(
   );
 });
 
-if (process.env.NODE_ENV !== 'production') {
-  OuterClick.propTypes = {
-    as: PropTypes.elementType,
-    children: PropTypes.node,
-    onOuterClick: PropTypes.func,
-  };
-}
+OuterClick.propTypes = {
+  as: PropTypes.elementType,
+  children: PropTypes.node,
+  onOuterClick: PropTypes.func,
+};
 
 export default OuterClick;
