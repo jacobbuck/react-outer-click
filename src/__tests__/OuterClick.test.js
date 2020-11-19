@@ -57,12 +57,3 @@ test('forwards callback ref to rendered elment', () => {
   );
   expect(ref).toHaveBeenCalledWith(container.firstChild);
 });
-
-test('propTypes aren’t set in production', () => {
-  const env = process.env;
-  process.env = { NODE_ENV: 'production' };
-  jest.resetModules();
-  expect(require('../OuterClick').default).not.toHaveProperty('propTypes');
-  process.env = env;
-  jest.resetModules();
-});
