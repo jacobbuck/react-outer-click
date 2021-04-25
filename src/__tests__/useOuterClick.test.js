@@ -49,39 +49,20 @@ test('doesn’t throw if handler is not set', () => {
   expect(() => fireClickEvent(getByTestId('child'))).not.toThrow();
 });
 
-test('throws TypeError if refs is not an array or object', () => {
+test('throws if refs is not an array or object', () => {
   expect(() => useOuterClick('hello', () => {})).toThrow(
-    new TypeError(
-      'Expected `refs` to be of type `array` or `object`, but received type `string`'
-    )
+    new Error('Invariant failed: Expected `refs` to be an array or object')
   );
 });
 
-test('throws TypeError if refs contains a value that is not a object', () => {
+test('throws if refs contains a value that is not a object', () => {
   expect(() => useOuterClick([{}, false], () => {})).toThrow(
-    new TypeError(
-      'Expected `refs[1]` to be of type `object`, but received type `boolean`'
-    )
+    new Error('Invariant failed: Expected `refs[1]` to be an object')
   );
 });
 
-test('throws TypeError if handler is not a function', () => {
+test('throws if handler is not a function', () => {
   expect(() => useOuterClick({}, {})).toThrow(
-    new TypeError(
-      'Expected `handler` to be of type `function`, but received type `object`'
-    )
+    new Error('Invariant failed: Expected `handler` to be a function')
   );
-});
-
-test('doesn’t typecheck in production', () => {
-  const env = process.env;
-  process.env = { NODE_ENV: 'production' };
-
-  expect(() => useOuterClick('hello', () => {})).not.toThrow(
-    new TypeError(
-      'Expected `refs` to be of type `array` or `object`, but received type `string`'
-    )
-  );
-
-  process.env = env;
 });
