@@ -37,6 +37,7 @@
   "dependencies": {
     "@babel/runtime": "^7.13.17",
     "prop-types": "^15.7.2",
+    "tiny-invariant": "^1.1.0",
     "use-composed-ref": "^1.1.0",
     "use-latest": "^1.2.0"
   },

@@ -1,28 +1,25 @@
 import { useEffect } from 'react';
+import invariant from 'tiny-invariant';
 import useLatest from 'use-latest';
 import castArray from './castArray';
 
 const useOuterClick = (refs, handler) => {
-  if (process.env.NODE_ENV !== 'production') {
-    if (Array.isArray(refs)) {
-      refs.forEach((ref, i) => {
-        if (typeof ref !== 'object' || ref === null) {
-          throw new TypeError(
-            `Expected \`refs[${i}]\` to be of type \`object\`, but received type \`${typeof ref}\``
-          );
-        }
-      });
-    } else if (typeof refs !== 'object' || refs === null) {
-      throw new TypeError(
-        `Expected \`refs\` to be of type \`array\` or \`object\`, but received type \`${typeof refs}\``
+  invariant(
+    Array.isArray(refs) || (typeof refs === 'object' && refs !== null),
+    'Expected `refs` to be an array or object'
+  );
+  if (Array.isArray(refs)) {
+    refs.forEach((ref, i) => {
+      invariant(
+        typeof ref === 'object' && ref !== null,
+        `Expected \`refs[${i}]\` to be an object`
       );
-    }
-    if (typeof handler !== 'function' && handler != null) {
-      throw new TypeError(
-        `Expected \`handler\` to be of type \`function\`, but received type \`${typeof handler}\``
-      );
-    }
+    });
   }
+  invariant(
+    typeof handler !== 'function' || handler == null,
+    'Expected `handler` to be a function'
+  );
 
   const refsRef = useLatest(refs);
   const handerRef = useLatest(handler);

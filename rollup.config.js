@@ -10,6 +10,7 @@ export default {
     /@babel\/runtime/,
     'prop-types',
     'react',
+    'tiny-invariant',
     'use-composed-ref',
     'use-latest',
   ],
