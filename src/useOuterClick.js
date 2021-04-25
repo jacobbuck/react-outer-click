@@ -17,7 +17,7 @@ const useOuterClick = (refs, handler) => {
     });
   }
   invariant(
-    typeof handler !== 'function' || handler == null,
+    typeof handler === 'function' || handler == null,
     'Expected `handler` to be a function'
   );
 
