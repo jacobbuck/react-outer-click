@@ -32,10 +32,9 @@ const useOuterClick = (refs, handler) => {
             ref.current &&
             ref.current !== event.target &&
             !ref.current.contains(event.target)
-        ) &&
-        handerRef.current != null
+        )
       ) {
-        handerRef.current(event);
+        handerRef.current?.(event);
       }
     };
 
