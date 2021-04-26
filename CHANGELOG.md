@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency.
+
+### Changed
+
+- Changed type checking in `useOuterClick` hook to use `invariant` function.
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.13.17.
+- Updated devDependencies.
+
 ## v3.5.0 - 2020-11-19
 
 ### Added
