@@ -23,7 +23,8 @@ import { useOuterClick } from 'react-outer-click';
 const Example = (props) => {
   const el = useRef(null);
 
-  useOuterClick(el, () => {
+  useOuterClick(el, (event) => {
+    event.preventDefault();
     console.log('Clicked outside');
   });
 
@@ -51,6 +52,7 @@ const Example = (props) => {
   return (
     <OuterClick
       onOuterClick={() => {
+        event.preventDefault();
         console.log('Clicked outside');
       }}
     >
