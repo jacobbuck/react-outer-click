@@ -14,9 +14,8 @@
 
 ### Changed
 
-- Changed type checking in `useOuterClick` hook to use `invariant` function.
+- Changed type checking in `useOuterClick` hook to use `invariant` function from [tiny-invariant](https://www.npmjs.com/package/tiny-invariant).
 - Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.13.17.
-- Updated devDependencies.
 
 ## v3.5.0 - 2020-11-19
 
@@ -26,17 +25,15 @@
 
 ### Changed
 
-- Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.12.5.
-- Bumped up version of [use-composed-ref](https://www.npmjs.com/package/use-composed-ref) to v1.1.0.
-- Bumped up version of [use-latest](https://www.npmjs.com/package/use-latest) to v1.2.0.
-- Updated devDependencies.
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.12.5.
+- Updated [use-composed-ref](https://www.npmjs.com/package/use-composed-ref) dependency to v1.1.0.
+- Updated [use-latest](https://www.npmjs.com/package/use-latest) dependency to v1.2.0.
 
 ## v3.4.1 - 2020-10-26
 
 ### Changed
 
-- Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.12.1.
-- Updated devDependencies.
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.12.1.
 
 ## v3.4.0 - 2020-10-25
 
@@ -48,7 +45,6 @@
 
 - Updated `handler` parameter of `useOuterClick` hook to allow `null`.
 - Updated `propTypes` to only be defined in non-production environments.
-- Updated devDependencies.
 - Updated React import to avoid using default import.
 
 ### Removed
@@ -56,10 +52,6 @@
 - Removed `defaultProps` in favour of default values in object destructuring.
 
 ## v3.3.1 - 2020-08-26
-
-### Changed
-
-- Updated devDependencies.
 
 ### Removed
 
@@ -77,24 +69,19 @@
 
 ### Changed
 
-- Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.11.2.
-- Updated devDependencies.
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.11.2.
 
 ## v3.2.0 - 2020-07-10
 
 ### Added
 
-- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) for Babel helpers.
-
-### Changed
-
-- Updated devDependencies.
+- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency for Babel helpers.
 
 ## v3.1.1 - 2020-07-09
 
-### Changed
+### Added
 
-- Used [use-latest](https://www.npmjs.com/package/use-latest) for handling refs in `useOuterClick` hook.
+- Added [use-latest](https://www.npmjs.com/package/use-latest) dependency.
 
 ## v3.1.0 - 2020-05-25
 
@@ -107,7 +94,6 @@
 ### Changed
 
 - Enabled loose mode on '@babel/preset-env' to reduce build output.
-- Updated devDependencies.
 
 ### Removed
 
@@ -115,14 +101,10 @@
 
 ## v3.0.0 - 2020-04-27
 
-## Added
+### Added
 
 - Added `as` prop to `OuterClick` component for rendering other elements.
 - Added ES Module build.
-
-### Changed
-
-- Updated devDependencies.
 
 ### Removed
 
@@ -150,17 +132,16 @@
 
 ### Added
 
-- Added `useOuterClick` hook.
 - Added listeners to touch events for better support on mobile browsers.
+- Added `useOuterClick` hook.
 
 ### Changed
 
 - **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.8.0 or newer.
 - **BREAKING** `OuterClick` component renders a wrapper `div` element (instead of using [`findDOMNode()`](https://reactjs.org/docs/react-dom.html#finddomnode).)
 - **BREAKING** Updated `children` prop-type of `OuterClick` component to be required.
-- Bumped up version of [prop-types](https://www.npmjs.com/package/prop-types) to v15.7.2.
 - Changed `OuterClick` component to be functional and use hooks internally.
-- Updated devDependencies.
+- Updated [prop-types](https://www.npmjs.com/package/prop-types) dependency to v15.7.2.
 
 ### Removed
 
@@ -171,7 +152,6 @@
 ### Changed
 
 - Builds are now done with [Rollup](http://rollupjs.org).
-- Updated devDependencies.
 
 ## v1.0.1 - 2017-08-21
 
