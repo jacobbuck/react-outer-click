@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Removed
+
+- Removed [use-latest](https://www.npmjs.com/package/use-latest) dependency.
+
 ## v3.6.0 - 2021-04-27
 
 ### Added
