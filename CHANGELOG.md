@@ -6,6 +6,10 @@
 
 - Added check to ensure `refs` parameter is not empty if an array.
 
+## Changed
+
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.14.0.
+
 ### Fixed
 
 - Fixed a bug where `handler` parameter and `onOuterClick` prop would never be called if one or more refs aren't defined.
