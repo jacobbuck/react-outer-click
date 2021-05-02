@@ -8,6 +8,7 @@ const useOuterClick = (refs, handler) => {
     'Expected `refs` to be an array or object'
   );
   if (Array.isArray(refs)) {
+    invariant(refs.length > 0, 'Expected `refs` to to not be empty');
     refs.forEach((ref, i) => {
       invariant(
         typeof ref === 'object' && ref !== null,
