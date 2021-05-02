@@ -12,7 +12,6 @@ export default {
     'react',
     'tiny-invariant',
     'use-composed-ref',
-    'use-latest',
   ],
   plugins: [
     babel({

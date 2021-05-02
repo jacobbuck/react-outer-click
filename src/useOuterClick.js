@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import invariant from 'tiny-invariant';
-import useLatest from 'use-latest';
 import castArray from './castArray';
 
 const useOuterClick = (refs, handler) => {
@@ -21,31 +20,36 @@ const useOuterClick = (refs, handler) => {
     'Expected `handler` to be a function'
   );
 
-  const refsRef = useLatest(refs);
-  const handerRef = useLatest(handler);
+  const eventListenerRef = useRef();
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    eventListenerRef.current = (event) => {
       if (
-        castArray(refsRef.current).every(
+        castArray(refs).every(
           (ref) =>
             ref.current &&
             ref.current !== event.target &&
             !ref.current.contains(event.target)
         )
       ) {
-        handerRef.current?.(event);
+        handler?.(event);
       }
     };
+  }, [handler, refs]);
 
-    document.addEventListener('mousedown', handleClickOutside, true);
-    document.addEventListener('touchstart', handleClickOutside, true);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside, true);
-      document.removeEventListener('touchstart', handleClickOutside, true);
+  useEffect(() => {
+    const eventListener = (event) => {
+      eventListenerRef.current(event);
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    ['mousedown', 'touchstart'].forEach((type) => {
+      document.addEventListener(type, eventListener, true);
+    });
+    return () => {
+      ['mousedown', 'touchstart'].forEach((type) => {
+        document.removeEventListener(type, eventListener, true);
+      });
+    };
+  }, []);
 };
 
 export default useOuterClick;
