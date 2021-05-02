@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+- Added check to ensure `refs` parameter is not empty if an array.
+
+### Fixed
+
+- Fixed a bug where `handler` parameter and `onOuterClick` prop would never be called if one or more refs aren't defined.
+
 ### Removed
 
 - Removed [use-latest](https://www.npmjs.com/package/use-latest) dependency.
