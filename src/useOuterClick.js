@@ -27,9 +27,9 @@ const useOuterClick = (refs, handler) => {
       if (
         castArray(refs).every(
           (ref) =>
-            ref.current &&
-            ref.current !== event.target &&
-            !ref.current.contains(event.target)
+            !ref.current ||
+            (ref.current !== event.target &&
+              !ref.current.contains(event.target))
         )
       ) {
         handler?.(event);

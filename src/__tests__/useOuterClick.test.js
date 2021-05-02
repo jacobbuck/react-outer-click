@@ -7,12 +7,13 @@ const fireClickEvent = (element) =>
   [fireEvent.mouseDown, fireEvent.touchStart].forEach((fn) => fn(element));
 
 const TestComponent = (props) => {
-  const ref = useRef(null);
-  useOuterClick(ref, props.handler);
+  const emptyRef = useRef(null);
+  const targetRef = useRef(null);
+  useOuterClick([emptyRef, targetRef], props.handler);
   return (
     <div data-testid="parent">
       <div data-testid="sibling">Test</div>
-      <div data-testid="target" ref={ref}>
+      <div data-testid="target" ref={targetRef}>
         Hello <div data-testid="child">World</div>
       </div>
     </div>
