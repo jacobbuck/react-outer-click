@@ -1,18 +1,25 @@
 import PropTypes from 'prop-types';
-import * as React from 'react';
-import { useRef } from 'react';
-import useComposedRef from 'use-composed-ref';
+import { forwardRef, useEffect, useRef } from 'react';
+import updateRef from './updateRef';
 import useOuterClick from './useOuterClick';
 
-const OuterClick = React.forwardRef(function OuterClick(
+const OuterClick = forwardRef(function OuterClick(
   { as: Element = 'div', children = null, onOuterClick = null, ...rest },
   userRef
 ) {
-  const libRef = useRef();
-  const ref = useComposedRef(libRef, userRef);
+  const libRef = useRef(null);
+
+  useEffect(() => {
+    updateRef(userRef, libRef.current);
+    return () => {
+      updateRef(userRef, null);
+    };
+  });
+
   useOuterClick(libRef, onOuterClick);
+
   return (
-    <Element {...rest} ref={ref}>
+    <Element {...rest} ref={libRef}>
       {children}
     </Element>
   );
