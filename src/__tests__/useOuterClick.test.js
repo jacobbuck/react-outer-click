@@ -3,7 +3,7 @@
  */
 import { fireEvent, render } from '@testing-library/react';
 import PropTypes from 'prop-types';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import useOuterClick from '../useOuterClick';
 
 const fireClickEvent = (element) =>
@@ -54,13 +54,13 @@ test('doesn’t throw if handler is not set', () => {
 });
 
 test('throws if refs is not an array or object', () => {
-  expect(() => useOuterClick('hello', () => {})).toThrow(
+  expect(() => useOuterClick('hello', jest.fn())).toThrow(
     new Error('Invariant failed: Expected `refs` to be an array or object')
   );
 });
 
 test('throws if refs contains a value that is not a object', () => {
-  expect(() => useOuterClick([{}, false], () => {})).toThrow(
+  expect(() => useOuterClick([{}, false], jest.fn())).toThrow(
     new Error('Invariant failed: Expected `refs[1]` to be an object')
   );
 });

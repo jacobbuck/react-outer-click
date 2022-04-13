@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { render } from '@testing-library/react';
-import React from 'react';
+import { createRef, forwardRef } from 'react';
 import OuterClick from '../OuterClick';
 import useOuterClick from '../useOuterClick';
 
@@ -19,7 +19,7 @@ test('calls useOuterClick with ref and onOuterClick prop when rendered', () => {
 
 test('renders a div element with passed children and props', () => {
   const { container } = render(
-    <OuterClick id="test" onOuterClick={() => {}} style={{ color: 'red' }}>
+    <OuterClick id="test" onOuterClick={jest.fn()} style={{ color: 'red' }}>
       Hello <strong>World!</strong>
     </OuterClick>
   );
@@ -36,19 +36,19 @@ test('renders element defined by `as` prop', () => {
 });
 
 test('renders component defined by `as` prop', () => {
-  const TestComponent = React.forwardRef(function TestComponent(props, ref) {
+  const TestComponent = forwardRef(function TestComponent(props, ref) {
     return <aside ref={ref} {...props} />;
   });
   const { container } = render(
-    <OuterClick as={TestComponent} onOuterClick={() => {}} />
+    <OuterClick as={TestComponent} onOuterClick={jest.fn()} />
   );
   expect(container.firstChild.tagName).toBe('ASIDE');
 });
 
 test('forwards ref to rendered elment', () => {
-  const ref = React.createRef();
+  const ref = createRef();
   const { container } = render(
-    <OuterClick onOuterClick={() => {}} ref={ref} />
+    <OuterClick onOuterClick={jest.fn()} ref={ref} />
   );
   expect(ref.current).toBe(container.firstChild);
 });
@@ -56,7 +56,7 @@ test('forwards ref to rendered elment', () => {
 test('forwards callback ref to rendered elment', () => {
   const ref = jest.fn();
   const { container } = render(
-    <OuterClick onOuterClick={() => {}} ref={ref} />
+    <OuterClick onOuterClick={jest.fn()} ref={ref} />
   );
   expect(ref).toHaveBeenCalledWith(container.firstChild);
 });
