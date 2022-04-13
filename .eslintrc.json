@@ -10,13 +10,22 @@
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended"
   ],
-  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   "plugins": ["jest", "prettier", "react", "react-hooks"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "react/display-name": "off"
+  },
   "settings": {
     "react": {
-      "version": "16.8.0"
+      "version": "detect"
     }
   }
 }
