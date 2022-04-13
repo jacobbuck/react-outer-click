@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { forwardRef, useEffect, useRef } from 'react';
-import updateRef from './updateRef';
+import updateRef from './utils/updateRef';
 import useOuterClick from './useOuterClick';
 
 const OuterClick = forwardRef(function OuterClick(
