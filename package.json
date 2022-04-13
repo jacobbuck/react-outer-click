@@ -37,8 +37,7 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "prop-types": "^15.8.1",
-    "tiny-invariant": "^1.2.0",
-    "use-composed-ref": "^1.2.1"
+    "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -48,7 +47,6 @@
     "@rollup/plugin-babel": "^5.3.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
-    "babel-eslint": "^10.1.0",
     "babel-plugin-dev-expression": "^0.2.3",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "eslint": "^8.13.0",
