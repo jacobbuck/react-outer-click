@@ -42,13 +42,11 @@ const useOuterClick = (refs, handler) => {
     const eventListener = (event) => {
       eventListenerRef.current(event);
     };
-    ['mousedown', 'touchstart'].forEach((type) => {
-      document.addEventListener(type, eventListener, true);
-    });
+    document.addEventListener('mousedown', eventListener, true);
+    document.addEventListener('touchstart', eventListener, true);
     return () => {
-      ['mousedown', 'touchstart'].forEach((type) => {
-        document.removeEventListener(type, eventListener, true);
-      });
+      document.removeEventListener('mousedown', eventListener, true);
+      document.removeEventListener('touchstart', eventListener, true);
     };
   }, []);
 };
