@@ -1,19 +1,17 @@
 import { useEffect, useRef } from 'react';
 import invariant from 'tiny-invariant';
 import castArray from './utils/castArray';
+import isObject from './utils/isObject';
 
 const useOuterClick = (refs, handler) => {
   invariant(
-    Array.isArray(refs) || (typeof refs === 'object' && refs !== null),
+    Array.isArray(refs) || isObject(refs),
     'Expected `refs` to be an array or object'
   );
   if (Array.isArray(refs)) {
     invariant(refs.length > 0, 'Expected `refs` to to not be empty');
     refs.forEach((ref, i) => {
-      invariant(
-        typeof ref === 'object' && ref !== null,
-        `Expected \`refs[${i}]\` to be an object`
-      );
+      invariant(isObject(ref), `Expected \`refs[${i}]\` to be an object`);
     });
   }
   invariant(

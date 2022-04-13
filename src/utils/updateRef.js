@@ -1,8 +1,10 @@
+import isObject from './isObject';
+
 const updateRef = (ref, value) => {
   if (typeof ref === 'function') {
     ref(value);
   }
-  if (typeof ref === 'object' && ref !== null) {
+  if (isObject(ref)) {
     ref.current = value;
   }
 };
