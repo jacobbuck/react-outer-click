@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { fireEvent, render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
