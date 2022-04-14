@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { createElement, forwardRef, useRef } from 'react';
+import { createElement, forwardRef, useCallback, useRef } from 'react';
 import updateRef from './utils/updateRef';
 import useOuterClick from './useOuterClick';
 
@@ -9,17 +9,15 @@ const OuterClick = forwardRef(
 
     useOuterClick(libRef, onOuterClick);
 
-    return createElement(
-      as,
-      {
-        ...props,
-        ref: (ref) => {
-          libRef.current = ref;
-          updateRef(userRef, ref);
-        },
+    const ref = useCallback(
+      (value) => {
+        libRef.current = value;
+        updateRef(userRef, value);
       },
-      children
+      [userRef]
     );
+
+    return createElement(as, { ...props, ref }, children);
   }
 );
 
