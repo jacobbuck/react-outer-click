@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { createElement, forwardRef, useCallback, useRef } from 'react';
+import { forwardRef, useCallback, useRef } from 'react';
 import updateRef from './utils/updateRef';
 import useOuterClick from './useOuterClick';
 
 const OuterClick = forwardRef(
-  ({ as = 'div', children = null, onOuterClick, ...props }, userRef) => {
+  ({ as: As = 'div', children = null, onOuterClick, ...props }, userRef) => {
     const libRef = useRef(null);
 
     useOuterClick(libRef, onOuterClick);
@@ -17,7 +17,11 @@ const OuterClick = forwardRef(
       [userRef]
     );
 
-    return createElement(as, { ...props, ref }, children);
+    return (
+      <As {...props} ref={ref}>
+        {children}
+      </As>
+    );
   }
 );
 
