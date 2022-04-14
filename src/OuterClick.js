@@ -1,29 +1,27 @@
 import PropTypes from 'prop-types';
-import { forwardRef, useEffect, useRef } from 'react';
+import { createElement, forwardRef, useRef } from 'react';
 import updateRef from './utils/updateRef';
 import useOuterClick from './useOuterClick';
 
-const OuterClick = forwardRef(function OuterClick(
-  { as: Element = 'div', children = null, onOuterClick = null, ...rest },
-  userRef
-) {
-  const libRef = useRef(null);
+const OuterClick = forwardRef(
+  ({ as = 'div', children = null, onOuterClick, ...props }, userRef) => {
+    const libRef = useRef(null);
 
-  useEffect(() => {
-    updateRef(userRef, libRef.current);
-    return () => {
-      updateRef(userRef, null);
-    };
-  });
+    useOuterClick(libRef, onOuterClick);
 
-  useOuterClick(libRef, onOuterClick);
-
-  return (
-    <Element {...rest} ref={libRef}>
-      {children}
-    </Element>
-  );
-});
+    return createElement(
+      as,
+      {
+        ...props,
+        ref: (ref) => {
+          libRef.current = ref;
+          updateRef(userRef, ref);
+        },
+      },
+      children
+    );
+  }
+);
 
 OuterClick.propTypes = {
   as: PropTypes.elementType,
