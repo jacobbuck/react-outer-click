@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Refactored ref forwarding in `OuterClick` component.
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.17.9.
+- Updated [prop-types](https://www.npmjs.com/package/prop-types) dependency to v15.8.1.
+- Updated [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency to v1.2.0.
+- Updated [react](https://www.npmjs.com/package/react) peerDependency to support v18.
+
+### Removed
+
+- Removed [use-composed-ref](https://www.npmjs.com/package/use-composed-ref) dependency.
+
 ## v3.7.0 - 2021-05-02
 
 ### Added
