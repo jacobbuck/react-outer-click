@@ -8,7 +8,7 @@
 - Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.17.9.
 - Updated [prop-types](https://www.npmjs.com/package/prop-types) dependency to v15.8.1.
 - Updated [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency to v1.2.0.
-- Updated [react](https://www.npmjs.com/package/react) peerDependency to support v18.
+- Updated [react](https://www.npmjs.com/package/react) peer-dependency to support v18.
 
 ### Removed
 
@@ -146,7 +146,7 @@
 
 ### Fixed
 
-- Fixed React peerDependency version.
+- Fixed React peer-dependency version.
 
 ## v2.1.0 - 2019-06-02
 
@@ -163,7 +163,7 @@
 
 ### Changed
 
-- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.8.0 or newer.
+- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peer-dependency to be v16.8.0 or newer.
 - **BREAKING** `OuterClick` component renders a wrapper `div` element (instead of using [`findDOMNode()`](https://reactjs.org/docs/react-dom.html#finddomnode).)
 - **BREAKING** Updated `children` prop-type of `OuterClick` component to be required.
 - Changed `OuterClick` component to be functional and use hooks internally.
@@ -171,7 +171,7 @@
 
 ### Removed
 
-- Removed [react-dom](https://www.npmjs.com/package/react-dom) peerDependency.
+- Removed [react-dom](https://www.npmjs.com/package/react-dom) peer-dependency.
 
 ## v1.0.2 - 2019-06-02
 
