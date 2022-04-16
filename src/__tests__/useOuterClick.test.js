@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import useOuterClick from '../useOuterClick';
@@ -29,28 +29,30 @@ TestComponent.propTypes = {
 
 test('calls handler when element outside ref is clicked/touched', () => {
   const handler = jest.fn();
-  const { getByTestId } = render(<TestComponent handler={handler} />);
-  [getByTestId('parent'), getByTestId('sibling')].forEach(fireClickEvent);
+  render(<TestComponent handler={handler} />);
+  [screen.getByTestId('parent'), screen.getByTestId('sibling')].forEach(
+    fireClickEvent
+  );
   expect(handler).toHaveBeenCalledTimes(4);
 });
 
 test('doesn’t call handler when element ref is clicked/touched', () => {
   const handler = jest.fn();
-  const { getByTestId } = render(<TestComponent handler={handler} />);
-  fireClickEvent(getByTestId('target'));
+  render(<TestComponent handler={handler} />);
+  fireClickEvent(screen.getByTestId('target'));
   expect(handler).not.toHaveBeenCalled();
 });
 
 test('doesn’t call handler when element inside ref is clicked/touched', () => {
   const handler = jest.fn();
-  const { getByTestId } = render(<TestComponent handler={handler} />);
-  fireClickEvent(getByTestId('child'));
+  render(<TestComponent handler={handler} />);
+  fireClickEvent(screen.getByTestId('child'));
   expect(handler).not.toHaveBeenCalled();
 });
 
 test('doesn’t throw if handler is not set', () => {
-  const { getByTestId } = render(<TestComponent handler={null} />);
-  expect(() => fireClickEvent(getByTestId('child'))).not.toThrow();
+  render(<TestComponent handler={null} />);
+  expect(() => fireClickEvent(screen.getByTestId('child'))).not.toThrow();
 });
 
 test('throws if refs is not an array or object', () => {
